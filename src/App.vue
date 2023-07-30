@@ -1,7 +1,18 @@
 <template>
-  <div>你好</div>
+    <div>
+        <SvgIcon name="home" color="red"></SvgIcon>
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+    setup() {
+        
+        return {}
+    }
+})
+</script>
 
 <style scoped></style>

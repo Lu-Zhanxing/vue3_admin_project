@@ -1,12 +1,26 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+//@ts-ignore
+import App from '@/App.vue'
+// 引入element plus插件
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+//@ts-ignore
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-createApp(App).mount('#app')
+// 导入svg
+import 'virtual:svg-icons-register'
 
-const aa = function () {
-  console.log('啊啊啊啊')
-  console.log("zazaza");
-  
-}
+// 引用自定义全局组件插件
+//@ts-ignore
+import gloablComponent from '@/components/index.ts'
 
-aa()
+
+const app = createApp(App)
+
+app.use(ElementPlus,{
+    locale: zhCn
+})
+app.use(gloablComponent)
+
+app.mount('#app')
+
