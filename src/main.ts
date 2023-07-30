@@ -13,7 +13,6 @@ import 'virtual:svg-icons-register'
 import gloablComponent from '@/components/index.ts'
 import '@/styles/index.scss'
 
-
 const app = createApp(App)
 
 app.use(ElementPlus, {
