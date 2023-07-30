@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <SvgIcon name="home" color="red"></SvgIcon>
-    </div>
+  <div>
+    <!-- <SvgIcon name="home" color="red"></SvgIcon> -->
+    <h1>你好</h1>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    setup() {
-        
-        return {}
-    }
+  setup() {
+    return {}
+  },
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+div{
+    h1{
+        color:$color
+    }
+}
+</style>

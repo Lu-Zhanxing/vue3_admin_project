@@ -12,11 +12,19 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       // Specify symbolId format
       symbolId: 'icon-[dir]-[name]',
-    })
+    }),
   ],
   resolve: {
     alias: {
-      "@": path.resolve("./src") // 相对路径别名配置，使用 @ 代替 src
-    }
-  }
+      '@': path.resolve('./src'), // 相对路径别名配置，使用 @ 代替 src
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        javascriptEnabled: true,
+        additionalData: '@import "./src/styles/variable.scss";',
+      },
+    },
+  },
 })
