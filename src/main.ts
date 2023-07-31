@@ -12,13 +12,14 @@ import 'virtual:svg-icons-register'
 import gloablComponent from '@/components/index.ts'
 import '@/styles/index.scss'
 import router from '@/router'
+import pinia from './store'
 
 const app = createApp(App)
-
 app.use(ElementPlus, {
   locale: zhCn,
 })
 app.use(gloablComponent)
 app.use(router)
+app.use(pinia)
 
 app.mount('#app')
