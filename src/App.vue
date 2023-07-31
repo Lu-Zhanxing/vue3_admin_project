@@ -1,17 +1,14 @@
 <template>
-  <div></div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import { reqLogin } from '@/api/user/index.ts'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    onMounted(() => {
-      reqLogin({ username: 'admin', password: '111111' })
-    })
-
     return {}
   },
 })

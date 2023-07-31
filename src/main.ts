@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-//@ts-ignore
 import App from '@/App.vue'
 // 引入element plus插件
 import ElementPlus from 'element-plus'
@@ -12,6 +11,7 @@ import 'virtual:svg-icons-register'
 //@ts-ignore
 import gloablComponent from '@/components/index.ts'
 import '@/styles/index.scss'
+import router from '@/router'
 
 const app = createApp(App)
 
@@ -19,5 +19,6 @@ app.use(ElementPlus, {
   locale: zhCn,
 })
 app.use(gloablComponent)
+app.use(router)
 
 app.mount('#app')
