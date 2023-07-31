@@ -10,10 +10,22 @@
             <el-input :prefix-icon="User" v-model="loginForm.username" />
           </el-form-item>
           <el-form-item>
-            <el-input :prefix-icon="Lock" type="password" show-password v-model="loginForm.password" />
+            <el-input
+              :prefix-icon="Lock"
+              type="password"
+              show-password
+              v-model="loginForm.password"
+            />
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" class="login_btn" @click="login" :loading="loading">登录</el-button>
+            <el-button
+              type="primary"
+              class="login_btn"
+              @click="login"
+              :loading="loading"
+            >
+              登录
+            </el-button>
           </el-form-item>
         </el-form>
       </el-col>
@@ -23,7 +35,7 @@
 
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
-import { reactive,ref } from 'vue'
+import { reactive, ref } from 'vue'
 import useUserStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
@@ -46,15 +58,13 @@ const login = async () => {
       type: 'success',
     })
   } catch (error) {
-    
     ElNotification({
       title: (error as Error).message,
       type: 'error',
     })
-  }finally{
+  } finally {
     loading.value = false
   }
-
 }
 </script>
 
