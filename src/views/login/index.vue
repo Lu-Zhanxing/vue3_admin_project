@@ -76,7 +76,7 @@ const login = async () => {
   loading.value = true
   try {
     await useStore.userLogin(loginForm)
-    $router.push('/home')
+    $router.push('/')
     ElNotification({
       title: `Hi,${getTime()}好`,
       message: '登录成功',

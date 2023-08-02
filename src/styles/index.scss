@@ -1,2 +1,14 @@
 @import 'reset.scss';
 
+// 全局设置滚动条样式
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:grey;
+}
+::-webkit-scrollbar-thumb{
+    width:8px;
+    border-radius:5px;
+    background:$base-menu-background;
+}
