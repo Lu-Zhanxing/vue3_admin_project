@@ -21,7 +21,7 @@
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import useUserStore from '@/store/modules/user'
-let userStore =  useUserStore()
+let userStore = useUserStore()
 </script>
 
 <style scoped lang="scss">
@@ -37,7 +37,7 @@ let userStore =  useUserStore()
     .scrollbar {
       width: 100%;
       height: calc(100vh - $base-menu-width);
-      .el-menu{
+      .el-menu {
         border-right: none;
       }
     }
