@@ -4,14 +4,19 @@
     <div class="layout_slider">
       <Logo></Logo>
       <el-scrollbar class="scrollbar">
-        <el-menu background-color="#001529" text-color="#fff" 
-        :default-active="$route.path">
+        <el-menu
+          background-color="#001529"
+          text-color="#fff"
+          :default-active="$route.path"
+        >
           <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
     </div>
     <!-- 顶部导航 -->
-    <div class="layout_tabbar"></div>
+    <div class="layout_tabbar">
+      <Tabbar></Tabbar>
+    </div>
     <div class="layout_main">
       <router-view></router-view>
     </div>
@@ -21,8 +26,9 @@
 <script setup lang="ts">
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
+import Tabbar from './tabbar/index.vue'
 import useUserStore from '@/store/modules/user'
-import {useRoute} from 'vue-router'
+import { useRoute } from 'vue-router'
 let $route = useRoute()
 let userStore = useUserStore()
 </script>
@@ -31,8 +37,6 @@ let userStore = useUserStore()
 .layout_container {
   width: 100%;
   height: 100vh;
-  background-color: #bfa;
-
   .layout_slider {
     width: $base-menu-width;
     height: 100vh;
@@ -49,7 +53,6 @@ let userStore = useUserStore()
   .layout_tabbar {
     width: calc(100% - $base-menu-width);
     height: $tabbar-base-height;
-    background-color: cyan;
     position: fixed;
     top: 0;
     left: $base-menu-width;
