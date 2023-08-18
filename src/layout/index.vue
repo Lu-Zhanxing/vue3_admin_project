@@ -1,14 +1,14 @@
 <template>
   <div class="layout_container">
     <!-- 左侧菜单 -->
-    <div class="layout_slider" :class="LayoutSettingStore.fold?'fold':''">
+    <div class="layout_slider" :class="LayoutSettingStore.fold ? 'fold' : ''">
       <Logo></Logo>
       <el-scrollbar class="scrollbar">
         <el-menu
           background-color="#001529"
           text-color="#fff"
           :default-active="$route.path"
-          :collapse="LayoutSettingStore.fold?true:false"
+          :collapse="LayoutSettingStore.fold ? true : false"
           :collapse-transition="false"
         >
           <Menu :menuList="userStore.menuRoutes"></Menu>
@@ -16,10 +16,10 @@
       </el-scrollbar>
     </div>
     <!-- 顶部导航 -->
-    <div class="layout_tabbar" :class="LayoutSettingStore.fold?'fold':''">
+    <div class="layout_tabbar" :class="LayoutSettingStore.fold ? 'fold' : ''">
       <Tabbar></Tabbar>
     </div>
-    <div class="layout_main" :class="LayoutSettingStore.fold?'fold':''">
+    <div class="layout_main" :class="LayoutSettingStore.fold ? 'fold' : ''">
       <Main></Main>
     </div>
   </div>
@@ -41,7 +41,7 @@ console.log(LayoutSettingStore.fold)
 
 <script lang="ts">
 export default {
-    name: 'Layout'
+  name: 'Layout',
 }
 </script>
 
@@ -55,8 +55,8 @@ export default {
     background-color: $base-menu-background;
     transition: all 0.3s;
 
-    &.fold{
-      width:$base-menu-min-width;
+    &.fold {
+      width: $base-menu-min-width;
     }
     .scrollbar {
       width: 100%;
@@ -74,7 +74,7 @@ export default {
     top: 0;
     left: $base-menu-width;
     transition: all 0.3s;
-    &.fold{
+    &.fold {
       width: calc(100% - $base-menu-min-width);
       left: $base-menu-min-width;
     }
@@ -90,7 +90,7 @@ export default {
     overflow: auto;
     padding: 10px;
     transition: all 0.3s;
-    &.fold{
+    &.fold {
       width: calc(100% - $base-menu-min-width);
       left: $base-menu-min-width;
     }

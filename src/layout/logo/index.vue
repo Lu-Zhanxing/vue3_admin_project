@@ -11,7 +11,7 @@ import setting from '@/setting'
 
 <script lang="ts">
 export default {
-    name: 'Logo'
+  name: 'Logo',
 }
 </script>
 
