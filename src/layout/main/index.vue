@@ -7,12 +7,15 @@ import { watch, ref, nextTick } from 'vue'
 import useLayoutSettingStore from '@/store/modules/setting'
 let LayoutSettingStore = useLayoutSettingStore()
 let flag = ref(true)
-watch(() => LayoutSettingStore.isRefresh, () => {
-  flag.value = !flag.value
-  nextTick(() => {
-    flag.value = true
-  })
-})
+watch(
+  () => LayoutSettingStore.isRefresh,
+  () => {
+    flag.value = !flag.value
+    nextTick(() => {
+      flag.value = true
+    })
+  },
+)
 </script>
 
 <script lang="ts">

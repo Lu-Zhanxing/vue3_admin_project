@@ -1,6 +1,6 @@
 <template>
-  <el-button size="small" icon="Refresh" circle @click="doRefresh"/>
-  <el-button size="small" icon="FullScreen" circle />
+  <el-button size="small" icon="Refresh" circle @click="doRefresh" />
+  <el-button size="small" icon="FullScreen" circle @click="switchFullScreen"/>
   <el-button size="small" icon="Setting" circle />
   <el-avatar
     size="small"
@@ -26,6 +26,15 @@ import useLayoutSettingStore from '@/store/modules/setting'
 let LayoutSettingStore = useLayoutSettingStore()
 const doRefresh = () => {
   LayoutSettingStore.isRefresh = !LayoutSettingStore.isRefresh
+}
+const switchFullScreen = () => {
+  let full = document.fullscreenElement;
+  // 如果不是全屏，切换为全屏
+  if(!full){
+    document.documentElement.requestFullscreen()
+  }else{
+    document.exitFullscreen()
+  }
 }
 </script>
 
