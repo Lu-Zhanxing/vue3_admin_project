@@ -1,5 +1,5 @@
 <template>
-  <el-button size="small" icon="Search" circle />
+  <el-button size="small" icon="Refresh" circle @click="doRefresh"/>
   <el-button size="small" icon="FullScreen" circle />
   <el-button size="small" icon="Setting" circle />
   <el-avatar
@@ -21,7 +21,13 @@
   </el-dropdown>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useLayoutSettingStore from '@/store/modules/setting'
+let LayoutSettingStore = useLayoutSettingStore()
+const doRefresh = () => {
+  LayoutSettingStore.isRefresh = !LayoutSettingStore.isRefresh
+}
+</script>
 
 <script lang="ts">
 export default {

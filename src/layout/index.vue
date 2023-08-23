@@ -36,7 +36,6 @@ import { useRoute } from 'vue-router'
 let $route = useRoute()
 let userStore = useUserStore()
 let LayoutSettingStore = useLayoutSettingStore()
-console.log(LayoutSettingStore.fold)
 </script>
 
 <script lang="ts">
