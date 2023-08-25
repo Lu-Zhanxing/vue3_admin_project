@@ -35,11 +35,11 @@ let useUserStore = defineStore('User', {
         return Promise.reject(new Error(resultUserInfo.data.message))
       }
     },
-    userLogout(){
+    userLogout() {
       REMOVE_TOKEN()
       this.username = ''
       this.avatar = ''
-    }
+    },
   },
   getters: {},
 })

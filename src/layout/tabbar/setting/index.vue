@@ -21,8 +21,9 @@
 <script setup lang="ts">
 import useLayoutSettingStore from '@/store/modules/setting'
 import useUserStore from '@/store/modules/user'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 let $router = useRouter()
+let $route = useRoute()
 let LayoutSettingStore = useLayoutSettingStore()
 let userStore = useUserStore()
 const doRefresh = () => {
@@ -40,7 +41,7 @@ const switchFullScreen = () => {
 // 退出登录
 const logout = () => {
   userStore.userLogout()
-  $router.push({path:'/login'})
+  $router.push({ path: '/login' , query: {redirect: $route.path}})
 }
 </script>
 
