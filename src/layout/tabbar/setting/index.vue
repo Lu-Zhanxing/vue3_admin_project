@@ -39,9 +39,9 @@ const switchFullScreen = () => {
   }
 }
 // 退出登录
-const logout = () => {
-  userStore.userLogout()
-  $router.push({ path: '/login' , query: {redirect: $route.path}})
+const logout = async() => {
+  await userStore.userLogout()
+  $router.push({ path: '/login', query: { redirect: $route.path } })
 }
 </script>
 

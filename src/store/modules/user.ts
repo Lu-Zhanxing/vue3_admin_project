@@ -32,13 +32,14 @@ let useUserStore = defineStore('User', {
         this.avatar = resultUserInfo.data.checkUser.avatar
         return 'ok'
       } else {
-        return Promise.reject(new Error(resultUserInfo.data.message))
+        return Promise.reject(new Error("获取用户信息失败"))
       }
     },
     userLogout() {
-      REMOVE_TOKEN()
+      this.token = ''
       this.username = ''
       this.avatar = ''
+      REMOVE_TOKEN()
     },
   },
   getters: {},

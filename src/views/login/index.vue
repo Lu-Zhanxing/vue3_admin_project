@@ -84,7 +84,7 @@ const login = async () => {
     //   $router.push('/')
     // }
     // 简写形式如下：
-    $router.push({path:redirect || '/'})
+    $router.push({ path: redirect || '/' })
     ElNotification({
       title: `Hi,${getTime()}好`,
       message: '登录成功',

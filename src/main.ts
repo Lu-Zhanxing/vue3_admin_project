@@ -12,6 +12,7 @@ import 'virtual:svg-icons-register'
 import gloablComponent from '@/components/index.ts'
 import '@/styles/index.scss'
 import router from '@/router'
+import '@/permission'
 import pinia from './store'
 
 const app = createApp(App)
