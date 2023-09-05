@@ -53,14 +53,14 @@ let loginFormRef = ref()
 let loading = ref(false)
 let loginForm = reactive({
   username: 'admin',
-  password: '11111',
+  password: 'atguigu123',
 })
 
 const validatePass = (rule: any, value: any, callback: any) => {
-  if (/^\d{6,10}$/.test(value)) {
+  if (/^\w{6,12}$/.test(value)) {
     callback()
   } else {
-    callback(new Error('密码为6-10位'))
+    callback(new Error('密码为6-12位'))
   }
 }
 
