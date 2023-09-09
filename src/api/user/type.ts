@@ -3,18 +3,18 @@ export interface loginForm {
   password: string
 }
 // 定义全部接口返回的数据都拥有的类型
-export interface ResponseData{
-    code: number
-    message: string
-    ok: boolean
+export interface ResponseData {
+  code: number
+  message: string
+  ok: boolean
 }
 // 定义登录接口返回的数据类型
-export interface loginResponseData extends ResponseData{
+export interface loginResponseData extends ResponseData {
   data: string
 }
 
 // 定义获取用户信息返回的数据类型
-export interface userInfoResponseData extends ResponseData{
+export interface userInfoResponseData extends ResponseData {
   data: {
     routes: string[]
     buttons: string[]
@@ -56,5 +56,3 @@ export interface userInfoResponseData extends ResponseData{
 //   code: number
 //   data: user
 // }
-
-

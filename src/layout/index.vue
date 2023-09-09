@@ -82,7 +82,6 @@ export default {
   .layout_main {
     width: calc(100% - $base-menu-width);
     height: calc(100vh - $tabbar-base-height);
-    background-color: yellow;
     position: absolute;
     top: $tabbar-base-height;
     left: $base-menu-width;

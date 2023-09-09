@@ -1,6 +1,10 @@
 import { defineStore } from 'pinia'
 import { reqLogin, reqUserInfo, reqLogout } from '@/api/user/index'
-import type { loginForm, loginResponseData, userInfoResponseData } from '@/api/user/type'
+import type {
+  loginForm,
+  loginResponseData,
+  userInfoResponseData,
+} from '@/api/user/type'
 import type { UserState } from './types/type'
 import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
 import { constantRoute } from '@/router/routes'
@@ -26,7 +30,7 @@ let useUserStore = defineStore('User', {
       }
     },
     async userInfo() {
-      let resultUserInfo: userInfoResponseData = await reqUserInfo()      
+      let resultUserInfo: userInfoResponseData = await reqUserInfo()
       if (resultUserInfo.code == 200) {
         this.username = resultUserInfo.data.name
         this.avatar = resultUserInfo.data.avatar
@@ -43,9 +47,9 @@ let useUserStore = defineStore('User', {
         this.avatar = ''
         REMOVE_TOKEN()
         return 'ok'
-      }else{
+      } else {
         return Promise.reject(new Error('退出登录失败'))
-      }     
+      }
     },
   },
   getters: {},
